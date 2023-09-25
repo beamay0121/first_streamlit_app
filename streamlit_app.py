@@ -39,14 +39,6 @@ try:
 except URLError as e:
   streamlit.error()
 
-# import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
-
-# take the json vers of the rsp and normalize it
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# output
-streamlit.dataframe(fruityvice_normalized)
-
 # do not run anything past here while we troubleshoot
 streamlit.stop()
 
